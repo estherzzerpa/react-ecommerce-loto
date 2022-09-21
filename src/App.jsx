@@ -15,7 +15,7 @@ function App() {
       <GlobalStyle />
       <NavBar />
       <ItemListContainer greeting={descuento} listProduct ={listProduct} setListProduct={setListProduct} />
-      <ItemDetailContainer listProduct={listProduct} />
+      <ItemDetailContainer/>
 
     </>
   );

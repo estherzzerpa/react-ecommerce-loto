@@ -18,7 +18,6 @@ const DetailCard = styled.div`
     height: 100%;
     padding: 10px;
 
-
 button{
     width: 90%;
     height: 50px;
@@ -57,8 +56,7 @@ const ItemDetail = ({product}) => {
             <h2>${product.price}</h2>
             <button>Añadir al carrito</button>
         </DetailCard>
-       
-
+    
     </ContainerDetailCard>
   )
 }
