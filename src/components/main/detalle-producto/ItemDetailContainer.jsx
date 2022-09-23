@@ -11,9 +11,7 @@ const Container = styled.div`
   justify-content: center;
 `
 
-
 const ItemDetailContainer = () => {
-
 
   const [producto, setProducto] = useState({})
   const [loading, setLoading]= useState(true)

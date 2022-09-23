@@ -4,7 +4,7 @@ import ItemList from './ItemList'
 import {WrapperMain, ImgPrincipal, DivPortada, ButtonPrincipal, ContainerSlogan} from '../../components/main/styled/StyleMain'
 
  
-const ItemListContainer = ({greeting, listProduct, setListProduct}) => {
+const ItemListContainer = ({greeting}) => {
 
     // <main className='container_main flex flex-wrap relative overflow-hidden h-[100%] w-[95%] justify-center top-32 m-auto overflow-y-scroll'>
 
@@ -27,6 +27,8 @@ const ItemListContainer = ({greeting, listProduct, setListProduct}) => {
 
   // }
   const [loading, setLoading]= useState(true)
+  const [listProduct, setListProduct] = useState([])
+
 
 useEffect(()=>{
 
