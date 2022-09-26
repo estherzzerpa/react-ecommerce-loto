@@ -4,22 +4,20 @@ import { colors } from "../../styled-components/global/Styled-App";
 export const WrapperMain = styled.div`
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
     height: 100%;
     padding-top:70px;
     width: 100%;
     justify-content: center;
     margin: auto;
     top: 8rem;
-    overflow-y: scroll;
-
+/* 
     &::-webkit-scrollbar{
         width: 10px;
         background-color: rgb(74, 42, 15);
     }
     &::-webkit-scrollbar-thumb{
         background-color: rgb(128, 74, 33);
-    }
+    } */
 
 `;
 
@@ -41,10 +39,10 @@ export const ContainerSlogan = styled.section`
     left:0 ;
     z-index: 1;
     text-align: center;
-    h2{
-        color: ${colors.primary};
-        font-size: 4rem;
-    }
+        h2{
+            color: ${colors.primary};
+            font-size: 4rem;
+        }   
 `
 
 export const ImgPrincipal = styled.img`

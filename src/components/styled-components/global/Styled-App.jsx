@@ -8,10 +8,10 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family:'Aboreto', 'cursive';
     }
-
+/* 
     body::-webkit-scrollbar{
         width: 0;
-    }
+    } */
 
     a{
         text-decoration: none;

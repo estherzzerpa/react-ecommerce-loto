@@ -5,9 +5,9 @@ import { colors } from '../../styled-components/global/Styled-App'
 const ContainerDetailCard = styled.div`
 display: flex;
 width: 80%;
+margin-top: 7%;
 height: 90vh;
 `
-
 const DetailCard = styled.div`
 
     display: flex;
@@ -15,7 +15,7 @@ const DetailCard = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 80%;
-    height: 100%;
+    height: 70%;
     padding: 10px;
 
 button{
@@ -23,7 +23,7 @@ button{
     height: 50px;
     border: none;
     background-color: ${colors.primary};
-    color: ${colors.text};
+    color: ${colors.text};  
     cursor: pointer;
 }
 `
@@ -38,22 +38,21 @@ img{
 }
 `
 
-const ItemDetail = ({product}) => {
+const ItemDetail = ({producto}) => {
 
-    console.log(product)
     // agregar el counter al detail
 
   return (
 
-
     <ContainerDetailCard>
+
         <CardImg>
-            <img src={product.image} alt="" />
+            <img src={producto.image} alt="" />
         </CardImg>
         <DetailCard>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <h2>${product.price}</h2>
+            <h2>{producto.title}</h2>
+            <p>{producto.description}</p>
+            <h2>${producto.price}</h2>
             <button>Añadir al carrito</button>
         </DetailCard>
     
