@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../styled-components/global/Styled-App'
 import { Link } from 'react-router-dom'
+import { Buttom } from '../styled-components/elements/Buttom'
 
 const CardProducts = styled.article`
         width: 30%; 
@@ -77,7 +78,7 @@ const Item = ({product}) => {
 
             {/* LLAMAR AL CALL BACK */}
 
-            <Link to={`/products/${idString}`}><button>Ver detalles</button></Link>
+            <Link to={`/products/${idString}`}><Buttom>Ver detalles</Buttom></Link>
 
         </div>
     </CardProducts>

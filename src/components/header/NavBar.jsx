@@ -30,6 +30,7 @@ const NavBar = () => {
           <NavLink to="/category/jewelery"><li>"jewelery"</li></NavLink> 
 
           </UlMenu>
+          
           <Link to="/cart">
             <CartWidget />
           </Link>

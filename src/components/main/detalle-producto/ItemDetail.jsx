@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { colors } from '../../styled-components/global/Styled-App'
+import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
+import { Buttom } from '../../styled-components/elements/Buttom'
 
 const ContainerDetailCard = styled.div`
-display: flex;
-width: 80%;
-margin-top: 7%;
-height: 90vh;
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    justify-content: space-between;
 `
 const DetailCard = styled.div`
 
@@ -15,32 +17,36 @@ const DetailCard = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 80%;
-    height: 70%;
+    height: 100%;
     padding: 10px;
-
-button{
-    width: 90%;
-    height: 50px;
-    border: none;
-    background-color: ${colors.primary};
-    color: ${colors.text};  
-    cursor: pointer;
-}
+    div{
+        display: flex;
+    }
 `
 const CardImg = styled.div`
-width: 40%;
-padding: 10px;
+    width: 40%;
+    padding: 10px;
 
-img{
-    width: 100%;
-    min-width: 320px;
-    height: 100%;
-}
+    img{
+        width: 100%;
+        min-width: 320px;
+        height: 100%;
+    }
 `
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({producto, setStock,  stock, count, setCount}) => {
 
-    // agregar el counter al detail
+    const [goCart, setGoCart] = useState(false)
+
+    const onAdd = () => {
+   
+        setStock(stock - count)
+    
+        setGoCart(true)
+    
+        count >= producto.stock && console.log( "No hay mas stock")
+    
+    }
 
   return (
 
@@ -53,7 +59,16 @@ const ItemDetail = ({producto}) => {
             <h2>{producto.title}</h2>
             <p>{producto.description}</p>
             <h2>${producto.price}</h2>
-            <button>Añadir al carrito</button>
+            <p>STOCK: <strong>{stock}</strong></p>
+
+            {
+                goCart
+                ? <Link to='/cart'><Buttom> Ir al carrito </Buttom></Link>
+                : <ItemCount onAdd={onAdd} count={count} setCount={setCount} stock={stock} />
+
+            }
+          
+
         </DetailCard>
     
     </ContainerDetailCard>
