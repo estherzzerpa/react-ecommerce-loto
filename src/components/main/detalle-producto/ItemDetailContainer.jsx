@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
   
   const {IdProducto} = useParams()
 
-  const [stock, setStock] = useState(30)
+  const [stock, setStock] = useState(1)
 
   console.log(stock)
 
@@ -38,9 +38,12 @@ const ItemDetailContainer = () => {
       try{
         const respuesta = await fetch(`https://fakestoreapi.com/products/${IdProducto}`)
         const data = await respuesta.json();
+        const stockData = Math.floor(Math.random()  * 20)
 
-        // setProducto({...data, stock: Math.floor(Math.random() * 20)});
-        setProducto(data)
+        setProducto({...data, stockData});
+        // setProducto(data)
+        setStock(stockData)
+        console.log(stock)
       
       }
       catch{

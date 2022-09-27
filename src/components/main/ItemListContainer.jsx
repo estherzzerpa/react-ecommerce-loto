@@ -22,7 +22,6 @@ const URL_CATEGORY = `https://fakestoreapi.com/products/category/${IdCategoria}`
   
 const resultado =  IdCategoria === undefined ? URL_BASE : URL_CATEGORY
 
-
 useEffect(()=>{
 
   fetch( `${resultado}`)
