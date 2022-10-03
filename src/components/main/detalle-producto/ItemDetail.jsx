@@ -64,8 +64,8 @@ const ItemDetail = ({producto, setStock,  stock, count, setCount}) => {
             <img src={producto.image} alt="" />
         </CardImg>
         <DetailCard>
-            <h2>{producto.title}</h2>
-            <p>{producto.description}</p>
+            <h2>{producto.category}</h2>
+            <p>{producto.title}</p>
             <h2>${producto.price}</h2>
             <p>STOCK: <strong>{stock}</strong></p>
 

@@ -11,17 +11,15 @@ const CartContext = ({children}) => {
     const addItem = (producto, cantidad) =>{
 
         let newCart;
-
-        let prod = cart.find((prod) => prod.id === producto.id ) 
-
+        let prod = cart.find((prod)=> prod.id === producto.id )
         if(prod){
-            
-           prod.cantidad += cantidad
-           newCart = [...cart]
-        }
-        else{
-            prod = {...producto, cantidad }
-            newCart = [...cart, prod]
+
+            prod.cantidad += cantidad
+
+            newCart = [...cart]
+            console.log(newCart)
+        }else{
+            newCart = [...cart, {...producto, cantidad}]
         }
 
         setCart(newCart)

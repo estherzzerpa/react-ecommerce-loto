@@ -25,7 +25,6 @@ const ContainerCart = styled.div`
 const StyleP = styled.p`
   color: #612a09;
 `
-
 export const useCartContext = () => useContext(Context)
 
 const Cart = () => {
