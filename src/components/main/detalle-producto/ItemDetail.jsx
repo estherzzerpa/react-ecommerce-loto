@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
@@ -52,7 +52,7 @@ const ItemDetail = ({producto, setStock,  stock, count, setCount}) => {
         addItem(producto, count)
         setGoCart(true)
     
-        count >= producto.stock && console.log( "No hay mas stock")
+        // count >= producto.stock &&  
     
     }
 

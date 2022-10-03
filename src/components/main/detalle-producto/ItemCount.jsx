@@ -27,8 +27,6 @@ const ItemCount = ({onAdd, stock, count, setCount}) => {
     const pluss = () =>{
 
         count < stock && setCount(count + 1)
-        console.log(stock)
-
     }
 
     const subtr = ()=>{
@@ -36,7 +34,6 @@ const ItemCount = ({onAdd, stock, count, setCount}) => {
         count > 1 && setCount(count - 1)
         console.log(stock)
     }
-
 
   return (
     <>

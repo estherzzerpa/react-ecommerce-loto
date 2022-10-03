@@ -12,7 +12,7 @@ const CartContext = ({children}) => {
 
         let newCart;
 
-        let prod = cart.find((prod)=>prod.id === producto.id) 
+        let prod = cart.find((prod) => prod.id === producto.id ) 
 
         if(prod){
             
@@ -39,7 +39,8 @@ const CartContext = ({children}) => {
         
         setCart(cartFiltrado)
     }
-
+    
+    // restear el cart
     const clear = () =>{
         setCart([])
     }
@@ -47,10 +48,12 @@ const CartContext = ({children}) => {
     const isInCart = (id)=>{
         cart.find((item)=> item.id === id ? true : false )
     } 
-
+    // precio total de todos los productos en el cart 
     const totalPrice =  ()=>{
        return cart.reduce((acum, act ) => acum + act.cantidad * act.price, 0 )
     }
+
+    // cantidad total de prodcutos
 
     const totalProducts = ()=> cart.reduce((acum, productoActual) => acum + productoActual.cantidad, 0)
 
