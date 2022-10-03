@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
 import { Buttom } from '../../styled-components/elements/Buttom'
+import { Context } from '../../Context/CustomContext'
+import { useCartContext } from '../../header/CartView/Cart'
+import { colors } from '../../styled-components/global/Styled-App'
 
 const ContainerDetailCard = styled.div`
     display: flex;
     width: 80%;
     height: 90vh;
     justify-content: space-between;
+    margin-top: 57px;
+    overflow: hidden;
+
 `
 const DetailCard = styled.div`
 
@@ -37,11 +43,13 @@ const CardImg = styled.div`
 const ItemDetail = ({producto, setStock,  stock, count, setCount}) => {
 
     const [goCart, setGoCart] = useState(false)
+    
+    const {addItem} = useCartContext(Context)
 
     const onAdd = () => {
    
         setStock(stock - count)
-    
+        addItem(producto, count)
         setGoCart(true)
     
         count >= producto.stock && console.log( "No hay mas stock")
@@ -63,7 +71,7 @@ const ItemDetail = ({producto, setStock,  stock, count, setCount}) => {
 
             {
                 goCart
-                ? <Link to='/cart'><Buttom> Ir al carrito </Buttom></Link>
+                ? <Link to='/cart'><Buttom color={colors.primary} width="100%"> Ir al carrito </Buttom></Link>
                 : <ItemCount onAdd={onAdd} count={count} setCount={setCount} stock={stock} />
 
             }

@@ -5,9 +5,9 @@ import { colors } from "../global/Styled-App";
 
 export const Buttom = styled.button`
      
-    width: 100%;
+    width: ${({width})=> width };
     height: 30px;
-    background-color: ${colors.primary};
+    background-color: ${({color}) => color};
     border: none;
     color: ${colors.text};
     font-weight: bolder;

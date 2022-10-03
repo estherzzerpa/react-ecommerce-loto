@@ -9,10 +9,9 @@ const CardProducts = styled.article`
         min-width: 300px;
         transition: .5s all ease;
         background-color: #cdae94 ;
-        overflow: hidden;
         margin: 5px;
         color: ${colors.text};
-
+        box-shadow: 1px 1px 4px 2px #8a6756db ;
         div{
             display: flex;
             flex-direction: column;
@@ -36,7 +35,7 @@ const CardProducts = styled.article`
         width: 100%;
         overflow: hidden;
         position: relative;
-        height:400px;
+        height:380px;
         background-color: beige;
         h2{
             position: absolute;
@@ -46,9 +45,11 @@ const CardProducts = styled.article`
         }
     `
     const ImgProduct = styled.img`
-        
-        width:100% ;
-        min-width: 300px;
+        /* object-fit: contain; */
+        width:100%;
+        min-width: 20%;
+        height: 100%;
+        object-fit: fill;
         cursor: pointer;
         transition: .5s all;
        
@@ -78,7 +79,7 @@ const Item = ({product}) => {
 
             {/* LLAMAR AL CALL BACK */}
 
-            <Link to={`/products/${idString}`}><Buttom>Ver detalles</Buttom></Link>
+            <Link to={`/products/${idString}`}><Buttom width="100%" color={colors.primary}>Ver detalles</Buttom></Link>
 
         </div>
     </CardProducts>

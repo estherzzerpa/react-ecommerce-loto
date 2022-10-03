@@ -7,16 +7,19 @@ const WrapperItem = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: white;
+  background-color: #f9ece5;
   width: 100%;
   height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
 `
 
 const ItemList = ({loading, listProduct}) => {
   
   return (
     <WrapperItem>
-    
+
     {
       loading
       ? <ClipLoader color={"#593713"} loading={loading} size={150} />

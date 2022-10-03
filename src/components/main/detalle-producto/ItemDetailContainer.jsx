@@ -25,8 +25,6 @@ const ItemDetailContainer = () => {
 
   const [stock, setStock] = useState(1)
 
-  console.log(stock)
-
   const [count, setCount] = useState(1)
   
  
@@ -38,16 +36,14 @@ const ItemDetailContainer = () => {
       try{
         const respuesta = await fetch(`https://fakestoreapi.com/products/${IdProducto}`)
         const data = await respuesta.json();
-        const stockData = Math.floor(Math.random()  * 20)
+        const stockData = Math.floor(Math.random()  * 100)
 
         setProducto({...data, stockData});
-        // setProducto(data)
         setStock(stockData)
-        console.log(stock)
       
       }
       catch{
-        console.error("ALgo salio mal")
+        console.error("Algo salio mal")
       }
       finally{
         setLoading(false)
@@ -55,7 +51,6 @@ const ItemDetailContainer = () => {
     }
 
     getItem()
-
 
   },[IdProducto])
  

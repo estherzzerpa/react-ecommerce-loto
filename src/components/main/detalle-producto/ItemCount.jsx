@@ -20,8 +20,6 @@ const Count = styled.div`
         color: ${colors.text};  
         cursor: pointer;
     }
-
-
 `
 
 const ItemCount = ({onAdd, stock, count, setCount}) => {
@@ -47,7 +45,7 @@ const ItemCount = ({onAdd, stock, count, setCount}) => {
             <h2>{count}</h2>
             <button onClick={pluss}><img src={plus} alt="" /></button>
         </Count>
-        <Buttom onClick={onAdd}>Añadir al carrito</Buttom>
+        <Buttom color={colors.primary} width="100%" onClick={onAdd}>Añadir al carrito</Buttom>
         
     </>
   )

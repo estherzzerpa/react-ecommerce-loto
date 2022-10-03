@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import imagen from "../../assets/images/imagen2.jpg"
+import Portada from '../header/Portada'
 import ItemList from './ItemList'
-import {WrapperMain, ImgPrincipal, DivPortada, ButtonPrincipal, ContainerSlogan} from '../../components/main/styled/StyleMain'
+import {WrapperMain} from '../../components/main/styled/StyleMain'
 import { useParams } from 'react-router-dom'
 // import { categorias,clothes } from '../../categorias/categorias'
  
@@ -12,10 +12,7 @@ const [listProduct, setListProduct] = useState([])
 const [error, setError] = useState(false)
 const {IdCategoria} = useParams()
 
-console.log(IdCategoria)
-
 // console.log(clothes)
-
 
 const URL_BASE = "https://fakestoreapi.com/products"
 const URL_CATEGORY = `https://fakestoreapi.com/products/category/${IdCategoria}`
@@ -43,29 +40,15 @@ useEffect(()=>{
 
   },[IdCategoria])
 
-  console.log(IdCategoria)
-
   return (
 
   <WrapperMain>
 
-      <DivPortada>
+   
+    <Portada url={IdCategoria} greeting={greeting}  ></Portada>
+    <ItemList listProduct= {listProduct} loading={loading}></ItemList>
 
-        <ImgPrincipal src={imagen} alt="imagen principal"/>
-
-        <ButtonPrincipal className=' btn' position={"absolute"} href="">GO SHOP</ButtonPrincipal>
-        
-        <ContainerSlogan>
-          <h2 >{greeting}</h2>
-          <h2 >MAKE IT YOURS</h2>
-        </ContainerSlogan>
-
-      </DivPortada>
-        
-      <ItemList listProduct={listProduct} loading={loading}></ItemList>
-      {console.log(listProduct)}
-
-    </WrapperMain>
+  </WrapperMain>
 )}
 
 export default ItemListContainer

@@ -10,15 +10,6 @@ export const WrapperMain = styled.div`
     justify-content: center;
     margin: auto;
     top: 8rem;
-/* 
-    &::-webkit-scrollbar{
-        width: 10px;
-        background-color: rgb(74, 42, 15);
-    }
-    &::-webkit-scrollbar-thumb{
-        background-color: rgb(128, 74, 33);
-    } */
-
 `;
 
 export const DivPortada = styled.div`
@@ -28,6 +19,7 @@ export const DivPortada = styled.div`
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    display: ${(props) => props.display};
 `
 export const ContainerSlogan = styled.section`
     display: flex;
@@ -83,7 +75,8 @@ export const ButtonPrincipal = styled.button`
             top: 0;
             bottom:0;
             transform: skewX(-45deg) scale(0, 1);
-            transition: all 0.5s;
+            transition: all 0.5s ease;
+            
         }
 
         &:hover{
