@@ -10,6 +10,8 @@ export const WrapperMain = styled.div`
     justify-content: center;
     margin: auto;
     top: 8rem;
+    scroll-behavior: smooth;
+
 `;
 
 export const DivPortada = styled.div`

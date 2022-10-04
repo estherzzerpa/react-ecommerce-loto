@@ -18,16 +18,22 @@ const WrapperItem = styled.div`
 const ItemList = ({loading, listProduct}) => {
   
   return (
-    <WrapperItem>
 
-    {
-      loading
-      ? <ClipLoader color={"#593713"} loading={loading} size={150} />
-      : listProduct.map((product) => <Item key={product.id} product={product}></Item> )
+    <>
 
-    }
-            
-    </WrapperItem>
+      <p id='products'>Products</p>
+
+      <WrapperItem>
+
+      {
+        loading
+        ? <ClipLoader color={"#593713"} loading={loading} size={150} />
+        : listProduct.map((product) => <Item key={product.id} product={product}></Item> )
+
+      }
+              
+      </WrapperItem>
+    </>
   )
 }
 

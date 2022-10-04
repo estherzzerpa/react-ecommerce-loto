@@ -31,13 +31,39 @@ const CartContext = ({children}) => {
 
     const removeItem = (id) =>{
 
-     const cartFiltrado =  cart.filter((item)=>{
-          return  item.id !== id
-        })
-        
-        setCart(cartFiltrado)
+    //  const cartFiltrado =  cart.filter((item)=>{
+    //       return  item.id !== id
+    //     });
+    //     setCart(cartFiltrado)
+
+
+    if(isInCart){
+        let newCart;
+        const clickId = cart.find((item)=>{
+        return item.id === id})
+
+        console.log(clickId.cantidad)
+
+
+        if(clickId.cantidad === 1){
+
+            newCart = [...cart.filter((item)=>{
+                return item.id !== id
+            })]
+
+            setCart(newCart)
+
+        }
+        else{
+            
+            setCart(cart.filter((item)=>{ return item.cantidad = item.cantidad  - 1 }))
+
+        }
+
     }
-    
+
+
+    }
     // restear el cart
     const clear = () =>{
         setCart([])

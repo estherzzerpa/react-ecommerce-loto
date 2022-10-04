@@ -13,7 +13,7 @@ const Portada = ({greeting, url}) => {
 
         <ImgPrincipal src={imagen} alt="imagen principal"/>
 
-        <ButtonPrincipal className=' btn' position={"absolute"} href="">GO SHOP</ButtonPrincipal>
+       <a href='#products'><ButtonPrincipal className=' btn' position={"absolute"} href="">GO SHOP</ButtonPrincipal></a>
 
         <ContainerSlogan>
         <h2 >{greeting}</h2>
