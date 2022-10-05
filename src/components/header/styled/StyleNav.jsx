@@ -15,13 +15,25 @@ export const ContainerNav = styled.div`
 export const Header = styled.header`
     display: flex;
     width: 100%;
-    background-color: ${colors.primary};
     height: 80px;
+    background-color:${({color})=>color};
     position: fixed;
     align-items:center;
     justify-content: center;
     z-index: 10000;
+    transition: all .5s ease-out;
+
+
+    .headerOpacity{
+        background-color:#502b0520 ;
+    }
+
+    .header{
+        background-color: #502b05dc;
+    }
 `
+
+
 
 export const UlMenu = styled.ul`
     width: 80%;
@@ -33,6 +45,14 @@ export const UlMenu = styled.ul`
         height: 80px;
         display: flex;
         align-items: center;
+    }
+
+    li{
+        list-style: none;
+        color: ${colors.second};
+        &:hover{
+        color: #dcb28beb;
+        }
     }
 
     a:nth-child(2){

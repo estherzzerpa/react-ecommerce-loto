@@ -5,11 +5,11 @@ export const WrapperMain = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    padding-top:70px;
+    /* padding-top:70px; */
     width: 100%;
     justify-content: center;
     margin: auto;
-    top: 8rem;
+    /* top: 8rem; */
     scroll-behavior: smooth;
 
 `;
@@ -30,6 +30,7 @@ export const ContainerSlogan = styled.section`
     flex-direction: column;
     position: absolute;
     right: 0;
+    top: 20%;
     left:0 ;
     z-index: 1;
     text-align: center;

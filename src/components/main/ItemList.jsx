@@ -15,13 +15,16 @@ const WrapperItem = styled.div`
 
 `
 
-const ItemList = ({loading, listProduct}) => {
+const ItemList = ({loading, listProduct, scrollBehavior}) => {
+  
   
   return (
 
     <>
+    <div ref={scrollBehavior}>
 
-      <p id='products'>Products</p>
+      <p>Products</p>
+    </div>
 
       <WrapperItem>
 

@@ -4,6 +4,7 @@ import ItemList from './ItemList'
 import {WrapperMain} from '../../components/main/styled/StyleMain'
 import { useParams } from 'react-router-dom'
 // import { categorias,clothes } from '../../categorias/categorias'
+import { useRef } from 'react'
  
 const ItemListContainer = ({greeting}) => {
 
@@ -40,13 +41,16 @@ useEffect(()=>{
 
   },[IdCategoria])
 
+  const scrollBehavior = useRef(null)
+
+
   return (
 
   <WrapperMain>
 
    
-    <Portada url={IdCategoria} greeting={greeting}  ></Portada>
-    <ItemList listProduct= {listProduct} loading={loading}></ItemList>
+    <Portada scrollBehavior={scrollBehavior} url={IdCategoria} greeting={greeting}></Portada>
+    <ItemList scrollBehavior={scrollBehavior} listProduct= {listProduct} loading={loading}></ItemList>
 
   </WrapperMain>
 )}

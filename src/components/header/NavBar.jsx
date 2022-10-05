@@ -2,14 +2,24 @@
 import CartWidget from "./CartView/CartWidget";
 import {ContainerNav, Header, UlMenu, Logo} from "./styled/StyleNav";
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const NavBar = () => {
+
+  const [chanceColor, setChanceColor] = useState(false)
+
+  const changeColorNav = ()=>{
+
+    window.scrollY >= 80 ? setChanceColor(true) : setChanceColor(false)
+  }
+
+  window.addEventListener("scroll", changeColorNav)
 
   return (
 
     <ContainerNav >        
 
-      <Header >
+      <Header color={chanceColor ? "#502b05dc" : "#7a634e1f"} >
       <Link to="/"><Logo>LOTO</Logo></Link>
 
         <UlMenu>
@@ -26,8 +36,8 @@ const NavBar = () => {
                 </ul> */}
         </li></NavLink>     
         <NavLink to="/category/electronics"><li>Electronics</li></NavLink> 
-        <NavLink to="/category/men's clothing"><li>men's clothing</li></NavLink> 
-        <NavLink to="/category/jewelery"><li>"jewelery"</li></NavLink> 
+        <NavLink to="/category/men's clothing"><li>Men's clothing</li></NavLink> 
+        <NavLink to="/category/jewelery"><li>Jewelery</li></NavLink> 
 
         </UlMenu>
         

@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
         font-family:'Aboreto', 'cursive';
-        scroll-behavior: smooth;
+        
     }
 
     body::-webkit-scrollbar{
@@ -28,13 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
-    li{
-        list-style: none;
-        color: wheat;
-        &:hover{
-        color: #cf6f08ef;
-        }
-    }
+   
 `
 
 
