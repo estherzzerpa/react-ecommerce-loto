@@ -41,10 +41,6 @@ const CartContext = ({children}) => {
         let newCart;
         const clickId = cart.find((item)=>{
         return item.id === id})
-
-        console.log(clickId.cantidad)
-
-
         if(clickId.cantidad === 1){
 
             newCart = [...cart.filter((item)=>{

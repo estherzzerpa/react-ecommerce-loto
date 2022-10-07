@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ItemDetail from "./ItemDetail"
 import ClipLoader from "react-spinners/ClipLoader";
 import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc} from "firebase/firestore";
 
 const Container = styled.div`
   width: 100%;
@@ -27,30 +28,42 @@ const ItemDetailContainer = () => {
 
   const [count, setCount] = useState(1)
   
- 
-
   useEffect(()=>{
 
-    const getItem = async ()=>{
+    const querydb = getFirestore()
+    const queryItem = doc(querydb,"productos",IdProducto )
 
-      try{
-        const respuesta = await fetch(`https://fakestoreapi.com/products/${IdProducto}`)
-        const data = await respuesta.json();
-        const stockData = Math.floor(Math.random()  * 100)
+    getDoc(queryItem)
+    .then((res)=>{
+      return setProducto({id:res.id, ...res.data()})
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
 
-        setProducto({...data, stockData});
-        setStock(stockData)
+    // const getItem = async ()=>{
+
+    //   try{
+    //     const respuesta = await fetch(`https://fakestoreapi.com/products/${IdProducto}`)
+    //     const data = await respuesta.json();
+    //     const stockData = Math.floor(Math.random()  * 100)
+
+    //     setProducto({...data, stockData});
+    //     setStock(stockData)
       
-      }
-      catch{
-        console.error("Algo salio mal")
-      }
-      finally{
-        setLoading(false)
-      }
-    }
+    //   }
+    //   catch{
+    //     console.error("Algo salio mal")
+    //   }
+    //   finally{
+    //     setLoading(false)
+    //   }
+    // }
 
-    getItem()
+    // getItem()
 
   },[IdProducto])
  

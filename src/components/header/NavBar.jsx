@@ -10,7 +10,7 @@ const NavBar = () => {
 
   const changeColorNav = ()=>{
 
-    window.scrollY >= 80 ? setChanceColor(true) : setChanceColor(false)
+    window.scrollY >= 10 ? setChanceColor(true) : setChanceColor(false)
   }
 
   window.addEventListener("scroll", changeColorNav)

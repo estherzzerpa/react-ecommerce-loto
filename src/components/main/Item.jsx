@@ -5,29 +5,34 @@ import { Link } from 'react-router-dom'
 import { Buttom } from '../styled-components/elements/Buttom'
 
 const CardProducts = styled.article`
+        
         width: 30%; 
         min-width: 300px;
+        height: 380px;
         transition: .5s all ease;
         background-color: #cdae94 ;
-        margin: 5px;
+        margin: 9px;
         color: ${colors.text};
         box-shadow: 1px 1px 4px 2px #8a6756db ;
-        div{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            button{
-                width: 100%;
-                height: 30px;
-                background-color: ${colors.primary};
-                border: none;
-                color: ${colors.text};
-                font-weight: bolder;
-                cursor: pointer;
-                transition: .5s all ease;
-                &:hover{
-                    background-color: ${colors.btnHover};
-                }
+    `
+    const Price = styled.div`
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        overflow: hidden;
+        justify-content: center;
+        justify-content: space-between;
+        height: 100px;
+        button{
+            width: 100%;
+            background-color: ${colors.primary};
+            border: none;
+            color: ${colors.text};
+            font-weight: bolder;
+            cursor: pointer;
+            transition: .5s all ease;
+            &:hover{
+                background-color: ${colors.btnHover};
             }
         }
     `
@@ -35,20 +40,19 @@ const CardProducts = styled.article`
         width: 100%;
         overflow: hidden;
         position: relative;
-        height:380px;
-        background-color: beige;
+        height:280px;
+        /* background-color: #080807; */
         h2{
             position: absolute;
-            top: 80%;
+            top: 50%;
             left: 10%;
             color: ${colors.primary};
         }
     `
     const ImgProduct = styled.img`
-        /* object-fit: contain; */
         width:100%;
         min-width: 20%;
-        height: 100%;
+            /* height: 100%; */
         object-fit: fill;
         cursor: pointer;
         transition: .5s all;
@@ -60,9 +64,6 @@ const CardProducts = styled.article`
 
 const Item = ({product}) => {
 
-    const idString = product.id.toString()
-
-
   return (
     <CardProducts >
 
@@ -73,15 +74,15 @@ const Item = ({product}) => {
 
         </InfoCard>
 
-        <div>
+        <Price>
 
             <p>${product.price}</p>
 
             {/* LLAMAR AL CALL BACK */}
 
-            <Link to={`/products/${idString}`}><Buttom width="100%" color={colors.primary}>Ver detalles</Buttom></Link>
+            <Link to={`/productos/${product.id}`}><Buttom width="100%" color={colors.primary}>Ver detalles</Buttom></Link>
 
-        </div>
+        </Price>
     </CardProducts>
   )
 }
