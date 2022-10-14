@@ -8,6 +8,7 @@ import { Context } from "../Context/CustomContext"
 import {db} from '../../firebase/firestore'
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import {  doc, updateDoc} from "firebase/firestore"
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 const Form = styled.form`
@@ -50,6 +51,11 @@ const Form = styled.form`
 
 `
 
+const DivToken = styled.div`
+    text-align: center;
+    color: black;
+`
+
 const Formulario = () => {
 
     const [pay, setPay] = useState(false)
@@ -61,6 +67,8 @@ const Formulario = () => {
     const [numeroTarjeta, setNumeroTarjeta] = useState("");
     const [numeroSeguridad, setNumeroSeguridad] = useState("")
     const [fechaVencimiento, setFechaVencimiento] = useState("")
+
+    const [loading, setLoading] = useState(true)
 
     const {cart, totalPrice, clear} = useCartContext(Context)
 
@@ -93,10 +101,12 @@ const Formulario = () => {
 
             })
 
+            setLoading(false)
+
             setIdCompra(res.id)
 
         })
-                    
+           
         setPay(true)
      
         clear()
@@ -112,8 +122,14 @@ const Formulario = () => {
         return (
 
             <ContainerCart>
-                <h1>Gracias por tu compra</h1>
-                <p>{idCompra}</p>
+                {
+                    loading ? <ClipLoader color={"#593713"} loading={loading}  size={150} /> 
+                            :<DivToken>
+                                <h1>Gracias por tu compra </h1>
+                                <p>Token : {idCompra}</p>
+                            </DivToken> 
+
+                }
             </ContainerCart>
             
         )
