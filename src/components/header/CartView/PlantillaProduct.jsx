@@ -29,15 +29,16 @@ const PlantillaProduct = styled.div`
     font-size: 11px;
     margin: 0;
   }
-  div{
+
+`
+
+const  Div = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 60%;
     margin-left: 30px;
-    /* align-items: center; */
     height: 100%;
-  }
 `
 
 
@@ -49,13 +50,14 @@ const Plantilla = ({prod}) => {
 
       <PlantillaProduct>
         <img src={prod.image} alt="" />
-        <div>
-          <p> Producto: {prod.title}</p>
-          <p>Cantidad: {prod.cantidad}</p>
+        <Div>
+          <p> Producto:{prod.title} </p>
+          <p>Cantidad:{prod.cantidad}</p>
           <p>Precio: ${prod.price}</p>
 
           <p>Precio total: ${prod.cantidad * prod.price}</p>
-        </div>
+        </Div>
+     
           
         <Buttom onClick={()=>removeItem(prod.id)} color="red" width={"10%"}>X</Buttom>
         <Buttom onClick={clear} color="blue" width={"10%"}>Clear</Buttom>

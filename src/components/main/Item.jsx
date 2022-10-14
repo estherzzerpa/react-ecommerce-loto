@@ -78,7 +78,6 @@ const Item = ({product}) => {
 
             <p>${product.price}</p>
 
-            {/* LLAMAR AL CALL BACK */}
 
             <Link to={`/productos/${product.id}`}><Buttom width="100%" color={colors.primary}>Ver detalles</Buttom></Link>
 

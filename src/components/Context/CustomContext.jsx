@@ -17,16 +17,13 @@ const CartContext = ({children}) => {
             prod.cantidad += cantidad
 
             newCart = [...cart]
-            console.log(newCart)
         }else{
             newCart = [...cart, {...producto, cantidad}]
         }
 
         setCart(newCart)
     }
-
-    console.log(cart)
-
+    
     // eliminar productos del carrito
 
     const removeItem = (id) =>{
@@ -58,7 +55,6 @@ const CartContext = ({children}) => {
 
     }
 
-
     }
     // restear el cart
     const clear = () =>{
@@ -75,7 +71,8 @@ const CartContext = ({children}) => {
 
     // cantidad total de prodcutos
 
-    const totalProducts = ()=> cart.reduce((acum, productoActual) => acum + productoActual.cantidad, 0)
+    const totalProducts = ()=> cart.reduce((acum, productoActual) => acum + productoActual.cantidad, 0);
+
 
   return (
 

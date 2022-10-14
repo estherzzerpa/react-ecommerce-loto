@@ -7,6 +7,9 @@ import { Context } from '../../Context/CustomContext'
 import { useCartContext } from '../../header/CartView/Cart'
 import { colors } from '../../styled-components/global/Styled-App'
 
+
+
+
 const ContainerDetailCard = styled.div`
     display: flex;
     width: 80%;
@@ -40,15 +43,17 @@ const CardImg = styled.div`
     }
 `
 
-const ItemDetail = ({producto, setStock,  stock, count, setCount}) => {
+const ItemDetail = ({producto,count, setCount}) => {
 
     const [goCart, setGoCart] = useState(false)
+    const { addItem} = useCartContext(Context)
+
     
-    const {addItem} = useCartContext(Context)
 
     const onAdd = () => {
-   
-        setStock(stock - count)
+
+
+
         addItem(producto, count)
         setGoCart(true)
     
@@ -67,12 +72,12 @@ const ItemDetail = ({producto, setStock,  stock, count, setCount}) => {
             <h2>{producto.category}</h2>
             <p>{producto.title}</p>
             <h2>${producto.price}</h2>
-            <p>STOCK: <strong>{stock}</strong></p>
+            <p>STOCK: <strong>{count >= producto.stock ? "No hay stock" : producto.stock }</strong></p>
 
             {
                 goCart
                 ? <Link to='/cart'><Buttom color={colors.primary} width="100%"> Ir al carrito </Buttom></Link>
-                : <ItemCount onAdd={onAdd} count={count} setCount={setCount} stock={stock} />
+                : <ItemCount onAdd={onAdd} count={count} setCount={setCount} stock={producto.stock} />
 
             }
           

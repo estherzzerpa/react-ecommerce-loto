@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/main/detalle-producto/ItemDetailCo
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/header/CartView/Cart';
 import CartContext from './components/Context/CustomContext';
+import Formulario from './components/formulario/Formulario';
 function App() {
 
   const descuento = "20% OFF"
@@ -24,6 +25,8 @@ function App() {
           <Route path='/category/:IdCategoria' element={<ItemListContainer greeting={descuento} /> } />
           <Route path='/productos/:IdProducto' element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<Cart />}/>
+          <Route path='/formulario' element={<Formulario />}/>
+
         </Routes>
 
     </CartContext>

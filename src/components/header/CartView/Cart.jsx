@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { Buttom } from '../../styled-components/elements/Buttom'
 import { colors } from '../../styled-components/global/Styled-App'
 
-const ContainerCart = styled.div`
+export const ContainerCart = styled.div`
   
   background-color: #eee0a9;
   width: 100%;
@@ -30,6 +30,7 @@ export const useCartContext = () => useContext(Context)
 const Cart = () => {
 
   const {cart, totalPrice} = useCartContext(Context)
+  console.log(cart)
 
   if(cart.length){
 
@@ -40,7 +41,7 @@ const Cart = () => {
         cart.map((prod)=> <Plantilla key={prod.id} prod={prod}/> )
       }
       <StyleP>Total: ${ totalPrice() }</StyleP>
-      <Buttom color={colors.primary} >Finalizar compra</Buttom>
+     <Link to='/formulario'><Buttom color={colors.primary} >Finalizar compra</Buttom></Link>
       </ContainerCart>
 
     );

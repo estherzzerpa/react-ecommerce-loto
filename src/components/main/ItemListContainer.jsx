@@ -6,13 +6,15 @@ import { useParams } from 'react-router-dom'
 import { useRef } from 'react'
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from '../../firebase/firestore'
- 
+
 const ItemListContainer = ({greeting}) => {
 
 const [loading, setLoading]= useState(true)
-const [listProduct, setListProduct] = useState([])
 const [error, setError] = useState(false)
 const {IdCategoria} = useParams()
+const [listProduct, setListProduct] = useState([])
+
+
 
 // console.log(clothes)
 
@@ -34,7 +36,7 @@ getDocs(resultado)
   }); 
   setListProduct(datos)
 })
-.catch((error) => {
+.catch(() => {
   setError(true)
   console.log(error)
 })

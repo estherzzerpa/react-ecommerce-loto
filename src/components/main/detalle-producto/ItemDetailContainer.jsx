@@ -5,6 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { useParams } from 'react-router-dom';
 import { getFirestore, doc, getDoc} from "firebase/firestore";
 
+
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -24,9 +25,7 @@ const ItemDetailContainer = () => {
   
   const {IdProducto} = useParams()
 
-  const [stock, setStock] = useState(1)
-
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(Number)
   
   useEffect(()=>{
 
@@ -72,7 +71,7 @@ const ItemDetailContainer = () => {
 
     {
 
-      loading ? <ClipLoader color={"#593713"} loading={loading}  size={150} /> : <ItemDetail key={producto.id} producto={producto} setStock={setStock} stock={stock} count={count} setCount={setCount}   />
+      loading ? <ClipLoader color={"#593713"} loading={loading}  size={150} /> : <ItemDetail key={producto.id} producto={producto} count={count} setCount={setCount}   />
 
     }
 
