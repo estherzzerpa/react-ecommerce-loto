@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
   
   const {IdProducto} = useParams()
 
-  const [count, setCount] = useState(Number)
+  const [count, setCount] = useState(1)
   
   useEffect(()=>{
 

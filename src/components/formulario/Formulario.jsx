@@ -58,7 +58,10 @@ const DivToken = styled.div`
 
 const Formulario = () => {
 
+    const [validacion, setValidacion] = useState(false)
     const [pay, setPay] = useState(false)
+    const [loading, setLoading] = useState(true)
+
     const [idCompra, setIdCompra] = useState("")
 
     const [name, setName] = useState("");
@@ -67,8 +70,6 @@ const Formulario = () => {
     const [numeroTarjeta, setNumeroTarjeta] = useState("");
     const [numeroSeguridad, setNumeroSeguridad] = useState("")
     const [fechaVencimiento, setFechaVencimiento] = useState("")
-
-    const [loading, setLoading] = useState(true)
 
     const {cart, totalPrice, clear} = useCartContext(Context)
 
@@ -81,35 +82,41 @@ const Formulario = () => {
         fechaVencimiento
     }
 
-
     const finalizarCompra = (e) =>{
-      
         e.preventDefault()
-        const ventasCollecion = collection(db, "Ventas")
-        addDoc(ventasCollecion,{
-            datosCliente,
-            items:cart,
-            date:serverTimestamp(),
-            total: totalPrice(),
-        })
-        .then((res)=>{
-            console.log(res.id)
 
-            cart.forEach((product)=>{
+        if([name, email, telefono,numeroTarjeta,numeroSeguridad,fechaVencimiento].includes("")){
 
-                actualizarStock(product)
+            setValidacion(true)       
 
+        }else{
+            setLoading(true)
+   
+            const ventasCollecion = collection(db, "Ventas")
+            addDoc(ventasCollecion,{
+                datosCliente,
+                items:cart,
+                date:serverTimestamp(),
+                total: totalPrice(),
+            })
+            .then((res)=>{
+                console.log(res.id)
+
+                cart.forEach((product)=>{
+
+                    actualizarStock(product)
+
+                })
+                setLoading(false)
+                setIdCompra(res.id)
+                clear()
+                
             })
 
-            setLoading(false)
-
-            setIdCompra(res.id)
-
-        })
+            setPay(true)
            
-        setPay(true)
-     
-        clear()
+        }
+
     }
 
     const  actualizarStock = (product)=>{
@@ -117,58 +124,56 @@ const Formulario = () => {
         return updateDoc(doc(db, "productos", product.id), {stock:product.stock - product.cantidad })
     }
 
-
-    if(pay){
+    if(pay === false){
         return (
 
             <ContainerCart>
-                {
-                    loading ? <ClipLoader color={"#593713"} loading={loading}  size={150} /> 
-                            :<DivToken>
-                                <h1>Gracias por tu compra </h1>
-                                <p>Token : {idCompra}</p>
-                            </DivToken> 
 
-                }
-            </ContainerCart>
-            
-        )
-    }
-
-    return (
-
-        <ContainerCart>
-            <Form onSubmit={finalizarCompra}>
-              
-                <label>
-                    Email:
-                    <input type="email" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
-                </label>
-                <label>
-                    Telefono:
-                    <input type="number" name="telefono" value={telefono} onChange={(e)=>{setTelefono(e.target.value)}} />
-                </label>
-                   <label htmlFor="">Numero de la tarjeta
+                <Form onSubmit={finalizarCompra}>
+                {validacion && "Todos los campos son obligatorios"}
+                    <label>
+                        Email:
+                        <input type="email" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+                    </label>
+                    <label>
+                        Telefono:
+                        <input type="number" name="telefono" value={telefono} onChange={(e)=>{setTelefono(e.target.value)}} />
+                    </label>
+                    <label htmlFor="">Numero de la tarjeta
                         <input type="number" value={numeroTarjeta} onChange={(e)=>{setNumeroTarjeta(e.target.value)}}   />
                     </label>
                     <label>
                         Nombre Completo:
                         <input type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}  />
                     </label>
-                <div>  
-                    <label htmlFor="">Fecha de vencimiento
-                        <input type="number" value={fechaVencimiento} onChange={(e)=>{setFechaVencimiento(e.target.value)}}   />
-                    </label> 
-                    <label htmlFor="">Numero de seguridad
-                        <input type="number" value={numeroSeguridad} onChange={(e)=>{setNumeroSeguridad(e.target.value)}}   />
-                    </label>
-                 
-                </div>
-             
-                <Buttom width="100%"  color={colors.second}  >Pagar</Buttom>
-            </Form>
-        </ContainerCart>
+                    <div>  
+                        <label htmlFor="">Fecha de vencimiento
+                            <input type="number" value={fechaVencimiento} onChange={(e)=>{setFechaVencimiento(e.target.value)}}   />
+                        </label> 
+                        <label htmlFor="">Numero de seguridad
+                            <input type="number" value={numeroSeguridad} onChange={(e)=>{setNumeroSeguridad(e.target.value)}}   />
+                        </label> 
+                    </div>
+                
+                    <Buttom width="100%"  color={colors.second}>Pagar</Buttom>
+                </Form>
+            </ContainerCart>
 
+        )
+    }
+
+    return (
+
+        <ContainerCart>
+                {
+                    loading ? <ClipLoader color={"#593713"} loading={loading}  size={50} /> 
+                            :<DivToken>
+                                <h1>Gracias por tu compra </h1>
+                                <p>Token : {idCompra}</p>
+                            </DivToken> 
+                }
+        </ContainerCart>
+        
     )
  
 }
