@@ -8,8 +8,7 @@ import { Context } from "../Context/CustomContext"
 import {db} from '../../firebase/firestore'
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import {  doc, updateDoc} from "firebase/firestore"
-import { Link } from "react-scroll"
-import Cart from "../header/CartView/Cart"
+
 
 const Form = styled.form`
     background-color: ${colors.primary};
@@ -54,6 +53,7 @@ const Form = styled.form`
 const Formulario = () => {
 
     const [pay, setPay] = useState(false)
+    const [idCompra, setIdCompra] = useState("")
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -93,6 +93,8 @@ const Formulario = () => {
 
             })
 
+            setIdCompra(res.id)
+
         })
                     
         setPay(true)
@@ -111,6 +113,7 @@ const Formulario = () => {
 
             <ContainerCart>
                 <h1>Gracias por tu compra</h1>
+                <p>{idCompra}</p>
             </ContainerCart>
             
         )
