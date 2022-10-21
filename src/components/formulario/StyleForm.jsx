@@ -3,7 +3,7 @@ import { colors } from "../styled-components/global/Styled-App"
 
 
 export const Form = styled.form`
-    background-color: ${colors.primary};
+    background-color: #ec9292;
     
     width: 50%;
     height: 100vh;
@@ -11,20 +11,18 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding-top: 10px;
+    padding-top: 50px;
     align-items: center;
     label{
         font-size: 12px;
         width: 70%;
         display: flex;
         flex-direction: column;
-
-
         input{
             outline: none;
             border: none;
+            background-color: ${colors.primary};
         }
-
     }
     div{
         display: flex;
