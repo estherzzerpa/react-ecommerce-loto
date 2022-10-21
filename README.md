@@ -1,7 +1,20 @@
-<h1>Proyecto de React en coderhouse </h1>
 
-Este es mi primer proyecto realizado con un framework! y react fue una excelente opcion para comenzar.
+# Proyecto para coderhouse del curso de React
 
-Para los estilos estoy usando Styled components (aprendiendolo sobre la marcha tambien)
+### El proyecto se basa en un ecommerce de ropa para mujer
 
-El proyecto se basa en un ecommerce de ropa para mujer
+#### Este es mi primer proyecto hecho con React y Styled components.
+
+## Vista previa
+
+![img](../assets/images/landing-react-ecommerce)
+
+
+## Herramientas que se utilizaron
+
+- React
+- Styled Components
+- React-spinners
+- React-router-dom
+- Firebase
+
