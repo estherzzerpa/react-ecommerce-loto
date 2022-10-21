@@ -7,7 +7,7 @@
 
 ## Vista previa
 
-![img](../assets/images/landing-react-ecommerce)
+![img](/src/assets/images/landing-react-ecommerce.jpg)
 
 
 ## Herramientas que se utilizaron
