@@ -1,56 +1,71 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Context } from '../../Context/CustomContext'
 import { useContext } from 'react'
 import Plantilla from './PlantillaProduct'
 import { Link } from 'react-router-dom'
 import { Buttom } from '../../styled-components/elements/Buttom'
 import { colors } from '../../styled-components/global/Styled-App'
+import Formulario from '../../formulario/Formulario'
+import { useState } from 'react'
+import ClipLoader from "react-spinners/ClipLoader";
+import { DivToken } from '../../formulario/StyleForm'
+import { ContainerCart, ContainerCart2, ContainerProduct, DivScroll, StyleP } from '../styled/StyleNav'
 
-export const ContainerCart = styled.div`
-  
-  background-color: #eee0a9;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  font-size: 1.5rem;
-  color: white;
-  font-weight: bold;
 
-`
-const StyleP = styled.p`
-  color: #612a09;
-`
 export const useCartContext = () => useContext(Context)
 
 const Cart = () => {
 
-  const {cart, totalPrice} = useCartContext(Context)
-  console.log(cart)
+  const [pay, setPay] = useState(false)
+  const [idCompra, setIdCompra] = useState("")
+  const [loading, setLoading] = useState(true)
 
-  if(cart.length){
+  const {cart, totalPrice} = useCartContext(Context)
+
+  if(pay){
 
     return (
-  
-      <ContainerCart> 
-      {
-        cart.map((prod)=> <Plantilla key={prod.id} prod={prod}/> )
-      }
-      <StyleP>Total: ${ totalPrice() }</StyleP>
-     <Link to='/formulario'><Buttom color={colors.primary} >Finalizar compra</Buttom></Link>
+      
+      <ContainerCart  >
+        {
+          loading ? <ClipLoader color={"#593713"} loading={loading}  size={50} /> 
+                  : <DivToken>
+                      <h1>Gracias por tu compra </h1>
+                      <p>Token : {idCompra}</p>
+                      <Link to='/'><Buttom color={colors.second} width="100%"> Seguir comprando</Buttom></Link>
+
+                    </DivToken> 
+        }
       </ContainerCart>
 
     );
   }
+  else if(cart.length){
+    return (
+
+      <ContainerCart2 > 
+
+        <ContainerProduct>
+        <StyleP>Total: ${ totalPrice() }</StyleP>
+
+          <DivScroll>
+            {
+              cart.map((prod)=> <Plantilla key={prod.id} prod={prod}/> )
+            }
+          </DivScroll>
+
+        </ContainerProduct>
+
+        <Formulario setPay={setPay} pay={pay} idCompra={idCompra} setIdCompra={setIdCompra} setLoading={setLoading} />
+      </ContainerCart2>
+  )
+
+  }
   return (
 
-    <ContainerCart>
+    <ContainerCart direction="true">
       <StyleP>El Carrito de compras esta vacio</StyleP>
-      <Link to='/'><Buttom color={colors.primary} width="100%"> Ir a comprar</Buttom></Link>
+      <Link to='/'><Buttom color={colors.second} width="100%"> Ir a comprar</Buttom></Link>
     </ContainerCart>
    
   )

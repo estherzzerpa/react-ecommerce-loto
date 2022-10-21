@@ -4,58 +4,100 @@ import { colors } from "../../styled-components/global/Styled-App";
 export const Logo = styled.h2`
     font-size: 20px;
     font-weight: bolder;
-    color: ${colors.second};
+    color: ${colors.text};
 `
 
 export const ContainerNav = styled.div`
     display: flex;
-    justify-content: center;
+    position: relative;
+  
 `;
 
 export const Header = styled.header`
     display: flex;
     width: 100%;
-    height: 80px;
+    height: ${(height)=> height};
     background-color:${({color})=>color};
     position: fixed;
     align-items:center;
     justify-content: center;
+    justify-content: space-evenly;
     z-index: 10000;
     transition: all .5s ease-out;
-
-
-    .headerOpacity{
-        background-color:#502b0520 ;
-    }
-
-    .header{
-        background-color: #502b05dc;
-    }
 `
-
-
 
 export const UlMenu = styled.ul`
     width: 80%;
-    list-style: none;
     display: flex;
     justify-content: space-evenly;
-
-    a{
-        height: 80px;
-        display: flex;
-        align-items: center;
-    }
-
-    li{
+    .links{
+        width: 80%;
         list-style: none;
-        color: ${colors.second};
-        &:hover{
-        color: #dcb28beb;
+        display: flex;
+        justify-content: space-evenly;
+        transition: all.5s ease-in-out;
+        .active{
+            border-bottom: 2px solid #20150beb;
+        }
+        a{
+            display: flex;
+            align-items: center;
+        }
+
+        li{
+            list-style: none;
+            width: 100%;
+            color: ${colors.text};
+            display: block;
+            &:hover{
+            color: ${colors.btnHover};
+            }
+        }
+
+        @media(max-width:920px){    
+            transform: translateY(100%);
+            width: 100%;
+            position: absolute;
+            flex-direction: column;
+            background-color: ${colors.primary} ;
+            height: 100vh;
+            justify-content:start;
+            gap: 2rem;
+            align-items: center;
+            li{
+            
+                padding-top: 10px;
+                font-size:1.5rem;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                transition: all.5s ease-in-out;
+
+                &:hover{
+                    font-size:30px;
+                }
+            }
+
+            .active{
+                border-bottom: none;
+            }
+            
+            a{
+                display: flex;
+                align-items: center;
+            }
         }
     }
 
-    a:nth-child(2){
+    .links.menuActivo{
+        transform: translateY(37%);
+        display: flex;
+    }
+
+    
+
+    /* a:nth-child(2){
         transition: .6s all;
         ul{
             transition: 1s all;
@@ -64,7 +106,6 @@ export const UlMenu = styled.ul`
             position: absolute;
             width: 100vw;
             right: 0%;
-            /* top:-100%; */
             z-index:-3;
             padding-left: 200px;
             opacity: 0;
@@ -87,8 +128,99 @@ export const UlMenu = styled.ul`
                 visibility: visible;
             }
         }
-    }    
+    }     */
+`
+// Plantilla de producto
+
+export const PlantillaProduct = styled.div`
+  width: 100%;
+  height: 120px;
+  box-shadow: 1px 1px  1px 1px  #e2c7bc76;
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  color: black;
+  img{
+    width: 80px;
+    border-radius: 10%;
+  }
+  p{
+    font-size: 11px;
+    margin: 0;
+  }
 `
 
+export const  Div = styled.div`
+  gap: 10px;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-left: 30px;
+  height: 100%;
+  background-color: antiquewhite;
+`
+
+
+// CART
+
+export const ContainerCart = styled.div`
+  
+  background-color: ${colors.primary};
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: ${(direction)=> direction && "column"} ;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  color: ${colors.text};
+  font-weight: bold;
+`
+
+export const ContainerCart2 = styled.div`
+  
+  background-color:${colors.primary};
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: ${colors.text};
+  font-weight: bold;
+  @media(max-width:860px){
+    flex-direction: column;
+  }
+`
+
+export  const ContainerProduct = styled.div`  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: ${colors.primary};
+ `
+
+export const DivScroll = styled.div`
+  overflow-x: hidden;
+  height: 50%;
+  width: 100%;
+  background-color: antiquewhite;
+
+  overflow-y: scroll;
+    &::-webkit-scrollbar{
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb{
+      background-color: ${colors.text};
+    }
+
+ `
+export const StyleP = styled.p`
+  color: ${colors.text};
+`
 
 

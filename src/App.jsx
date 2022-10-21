@@ -7,9 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/header/CartView/Cart';
 import CartContext from './components/Context/CustomContext';
 import Formulario from './components/formulario/Formulario';
+import Footer from './components/footer/Footer';
 function App() {
-
-  const descuento = "20% OFF"
 
   return (
    
@@ -21,8 +20,8 @@ function App() {
 
       <NavBar />
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting={descuento} /> } />
-          <Route path='/category/:IdCategoria' element={<ItemListContainer greeting={descuento} /> } />
+          <Route path='/' element={<ItemListContainer /> } />
+          <Route path='/category/:IdCategoria' element={<ItemListContainer /> } />
           <Route path='/productos/:IdProducto' element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<Cart />}/>
           <Route path='/formulario' element={<Formulario />}/>
@@ -31,7 +30,7 @@ function App() {
 
     </CartContext>
     
-
+    <Footer />
     </BrowserRouter>
 
     </>

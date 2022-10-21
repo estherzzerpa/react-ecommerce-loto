@@ -1,50 +1,42 @@
 import styled from "styled-components";
 import { colors } from "../../styled-components/global/Styled-App";
 
+// Imagen principal
+
 export const WrapperMain = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    /* padding-top:70px; */
     width: 100%;
     justify-content: center;
     margin: auto;
-    /* top: 8rem; */
-    scroll-behavior: smooth;
+    background-color: ${colors.primary};
 
 `;
 
 export const DivPortada = styled.div`
-    width: 100%;
-    min-width: 600px;
-    height: 100vh;
-    overflow: hidden;
+    min-width: 420px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     display: ${(props) => props.display};
-`
-export const ContainerSlogan = styled.section`
-    display: flex;
-    width: 100%;
-    height: 300px;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: 20%;
-    left:0 ;
-    z-index: 1;
-    text-align: center;
-        h2{
-            color: ${colors.primary};
-            font-size: 4rem;
-        }   
-`
 
-export const ImgPrincipal = styled.img`
-    max-width:100%;
-    min-width: 600px;
-    object-fit: cover;
-    background-position: center;
+    position: relative;
+    h2{
+        text-align: center;
+        margin-top: 100px;
+        color: ${colors.primary};
+        font-size: .5em;
+        margin: auto;
+        margin: auto;
+        position: absolute;
+        width: 180px;
+
+        top: 45%;
+        left: 37%;
+        right: 50%;
+        z-index: 2;
+    }  
 `
 
 export const ButtonPrincipal = styled.button`
@@ -52,16 +44,16 @@ export const ButtonPrincipal = styled.button`
     width: 200px;
     height: 100px;
     background-color: ${colors.text};
-    position: ${(props) => props.position };
+    position:absolute;
     top: 75%;
-    left: 45%;
+    left: 40%;
     right: 50%;
     z-index: 2;
     &.btn{
         width: 6.5em;
         height: 2.3em;
-        background-color: rgb(255, 255, 255);
-        color: rgb(89, 58, 43);
+        background-color: ${colors.primary};
+        color: ${colors.text};
         border: none;
         font-size: 20px;
         cursor: pointer;
@@ -70,7 +62,7 @@ export const ButtonPrincipal = styled.button`
 
         &:after{
             content: "";
-            background: rgb(89, 58, 43);
+            background: ${colors.second};
             position: absolute;
             z-index: -1;
             left: -20%;
@@ -83,7 +75,7 @@ export const ButtonPrincipal = styled.button`
         }
 
         &:hover{
-            color: rgb(255, 255, 255);
+            color: ${colors.primary};
 
             &:after{
                 transform: skewX(-45deg) scale(1, 1);
@@ -94,4 +86,156 @@ export const ButtonPrincipal = styled.button`
     }
 `
 
+// Detalle de producto
 
+export const ContainerDetailCard = styled.div`
+    display: flex;
+    width: 100%;
+    overflow-y: hidden;
+    align-items: center;
+    padding: 0 60px;
+  
+    @media(max-width:920px){
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+    }
+`
+export const DetailCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    min-width: 220px;
+    div{
+        display: flex;
+    }
+
+    @media(max-width:920px){
+       width: 100%;
+       margin-bottom: 100px;
+    }
+
+`
+export const CardImg = styled.div`
+    width: 50%;
+    text-align: center;
+    img{
+        width: 60%;
+        min-width: 220px;
+        min-height: 300px;
+        height: 70%;
+    }
+    @media(max-width:920px){
+        width: 100%;
+        height: 40%;
+    }    
+`
+
+// container de detalle de 
+
+export const Container = styled.div`
+    width: 100%;
+    height: 120vh;
+    display: flex;    
+    background-color: ${colors.primary};
+
+`
+// item count
+
+export const Count = styled.div`
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+    button{
+        width: 30%;
+        height: 35%;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+`
+// TODOS LOS PRODUCTOS
+
+export const WrapperMainProd = styled.div`
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 300%;
+    width: 100%;
+    margin-top: 100px;
+
+`
+
+export const WrapperItem = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 100px;
+
+`
+
+export const PProd = styled.p`
+  font-size: 30px;
+  font-weight: bold;
+  color: ${colors.text};
+  margin-top: 50px;
+`
+
+// CARDS DE LOS PRODUCTOS
+
+export const CardProducts = styled.article`
+    width: 25%; 
+    min-width: 300px;
+    height: 100%;
+    transition: .5s all ease;
+    margin: 5px;
+    color: ${colors.text};
+
+    &:hover{
+        box-shadow: 1px 1px 1px 1px #c2a5968b ;
+
+    }
+`
+export const Price = styled.div`
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    h2{
+        color: ${colors.primary};
+    }
+    button{
+        width: 100%;
+        background-color: ${colors.primary};
+        border: none;
+        color: ${colors.text};
+        font-weight: bolder;
+        cursor: pointer;
+        transition: .5s all ease;
+        &:hover{
+            background-color: ${colors.btnHover};
+        }
+    }
+`
+export const InfoCard = styled.div`
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height:280px;
+
+`
+export const ImgProduct = styled.img`
+    width:100%;
+    min-width: 20%;
+    object-fit: fill;
+    cursor: pointer;
+    transition: .5s all;
+    
+    &:hover{
+        transform: scale(1.1);
+    }
+`

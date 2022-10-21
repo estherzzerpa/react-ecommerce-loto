@@ -4,11 +4,11 @@ import styled from 'styled-components'
 
 import { useCartContext } from './Cart'
 import { Context } from '../../Context/CustomContext'
+import { colors } from '../../styled-components/global/Styled-App'
 
 const CartDiv = styled.div`
-  
   display: flex;
-  color: wheat;
+  color: ${colors.second};
 `
 
 const CartWidget = () => {

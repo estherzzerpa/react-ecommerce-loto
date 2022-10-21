@@ -1,11 +1,9 @@
-import { DivPortada, ButtonPrincipal, ContainerSlogan } from '../main/styled/StyleMain'
-import { ImgPrincipal } from '../main/styled/StyleMain'
-import imagen from "../../assets/images/imagen2.jpg"
-import { useRef } from 'react'
+import { DivPortada, ButtonPrincipal} from '../main/styled/StyleMain'
+import video from "../../assets/images/video1.mp4"
 
-const Portada = ({greeting, url, scrollBehavior}) => {
+const Portada = ({ url, scrollBehavior}) => {
 
-
+  // const [playVideo, setPLayVideo]
 
   const handleScroll = (elementRef)=>{
     window.scrollTo({
@@ -18,14 +16,10 @@ const Portada = ({greeting, url, scrollBehavior}) => {
 
     <DivPortada display= {url && "none"}>
 
-      <ImgPrincipal src={imagen} alt="imagen principal"/>
+      <video  type="video/mp4"  autoPlay loop muted src={video} alt="video principal"/>
 
-      <ButtonPrincipal onClick={()=>{handleScroll(scrollBehavior)}} className=' btn' position={"absolute"} href="">GO SHOP</ButtonPrincipal>
-
-      <ContainerSlogan>
-      <h2 >{greeting}</h2>
+      <ButtonPrincipal onClick={()=>{handleScroll(scrollBehavior)}} className=' btn'  href="">GO SHOP</ButtonPrincipal>
       <h2 >MAKE IT YOURS</h2>
-      </ContainerSlogan>
 
     </DivPortada>
   )

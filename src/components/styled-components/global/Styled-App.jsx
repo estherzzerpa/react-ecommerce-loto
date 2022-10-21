@@ -3,10 +3,10 @@ import { createGlobalStyle } from "styled-components";
 // variables colors
 
 export const colors = {
-    primary:"#54280f",
-    second:"#cf6f08ef",
-    text:"#ffff",
-    btnHover:"#6b4423"
+    primary:"#f0d6c7",
+    second:"#791818",
+    text:"#332b25",
+    btnHover:"#c77777"
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -14,15 +14,13 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        font-family:'Aboreto', 'cursive';
-        
+        font-family:'Aboreto', 'cursive';        
     }
-
     body::-webkit-scrollbar{
-        width: 3px;
+        width:3px;
     }
     body::-webkit-scrollbar-thumb{
-        background-color: ${colors.primary};
+        background-color: ${colors.second};
     }
 
     a{

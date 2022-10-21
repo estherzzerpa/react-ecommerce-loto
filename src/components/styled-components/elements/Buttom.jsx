@@ -9,12 +9,14 @@ export const Buttom = styled.button`
     height: 30px;
     background-color: ${({color}) => color};
     border: none;
-    color: ${colors.text};
+    color: ${colors.primary};
     font-weight: bolder;
     cursor: pointer;
     transition: .5s all ease;
     &:hover{
         background-color: ${colors.btnHover};
+        color: ${colors.text};
     }
+    margin: 5px;
             
 `
