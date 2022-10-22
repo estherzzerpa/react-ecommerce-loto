@@ -3,7 +3,7 @@ import { colors } from "../styled-components/global/Styled-App"
 
 
 export const Form = styled.form`
-    background-color: #ec9292;
+    background-color:${colors.btnHover};
     
     width: 50%;
     height: 100vh;

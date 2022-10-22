@@ -11,7 +11,6 @@ export const WrapperMain = styled.div`
     justify-content: center;
     margin: auto;
     background-color: ${colors.primary};
-
 `;
 
 export const DivPortada = styled.div`
@@ -20,7 +19,6 @@ export const DivPortada = styled.div`
     display: flex;
     flex-direction: column;
     display: ${(props) => props.display};
-
     position: relative;
     h2{
         text-align: center;
@@ -31,9 +29,8 @@ export const DivPortada = styled.div`
         margin: auto;
         position: absolute;
         width: 180px;
-
         top: 45%;
-        left: 37%;
+        left: 41%;
         right: 50%;
         z-index: 2;
     }  
@@ -46,7 +43,7 @@ export const ButtonPrincipal = styled.button`
     background-color: ${colors.text};
     position:absolute;
     top: 75%;
-    left: 40%;
+    left: 43%;
     right: 50%;
     z-index: 2;
     &.btn{
@@ -59,7 +56,6 @@ export const ButtonPrincipal = styled.button`
         cursor: pointer;
         z-index: 1;
         overflow: hidden;
-
         &:after{
             content: "";
             background: ${colors.second};
@@ -70,8 +66,7 @@ export const ButtonPrincipal = styled.button`
             top: 0;
             bottom:0;
             transform: skewX(-45deg) scale(0, 1);
-            transition: all 0.5s ease;
-            
+            transition: all 0.5s ease; 
         }
 
         &:hover{
