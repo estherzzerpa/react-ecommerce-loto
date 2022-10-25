@@ -3,11 +3,13 @@ import minus from '../../../assets/icon/bx-minus.svg'
 import { Buttom } from '../../styled-components/elements/Buttom';
 import { colors } from '../../styled-components/global/Styled-App';
 import { Count } from '../styled/StyleMain';
+import { isDisabled } from '@testing-library/user-event/dist/utils/misc/isDisabled';
 
 const ItemCount = ({onAdd, stock, count, setCount}) => {
 
+
     const pluss = () =>{
-        count < stock && setCount(count + 1)
+        count < stock && setCount(count + 1) 
     }
 
     const subtr = ()=>{
@@ -21,7 +23,7 @@ const ItemCount = ({onAdd, stock, count, setCount}) => {
             <h2>{count}</h2>
             <button onClick={pluss}><img src={plus} alt="" /></button>
         </Count>
-        <Buttom color={colors.second} height="50px" width="100%" onClick={onAdd}>Añadir al carrito</Buttom>
+        <Buttom  color={colors.second} height="50px" width="100%" onClick={stock === 0 ? isDisabled : onAdd}>Añadir al carrito</Buttom>
     </>
   )
 }
