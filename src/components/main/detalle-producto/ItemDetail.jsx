@@ -34,7 +34,7 @@ const ItemDetail = ({producto,count, setCount}) => {
 
             {
                 goCart
-                ? <Link to='/cart'><Buttom color={colors.second} width="100%"> Ir al carrito </Buttom></Link>
+                ? <Link to='/cart'><Buttom color={colors.second} height="50px" width="100%"> Ir al carrito </Buttom></Link>
                 : <ItemCount  onAdd={onAdd} count={count} setCount={setCount} stock={producto.stock} />
 
             }

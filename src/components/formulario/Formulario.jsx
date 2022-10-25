@@ -79,32 +79,33 @@ const Formulario = ({pay, setPay, setIdCompra, setLoading}) => {
         return (
 
             <Form onSubmit={finalizarCompra}>
-                {validacion && "Todos los campos son obligatorios"}
+                {validacion && (
+                    <div>
+                         <p>Todos los campos son obligatorios</p>
+                    </div>
+                )}
                 <label>
-                    Email:
-                    <input type="email" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+                    <input placeholder="Email" type="email" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                 </label>
                 <label>
-                    Telefono:
-                    <input type="number" name="telefono" value={telefono} onChange={(e)=>{setTelefono(e.target.value)}} />
+                    <input placeholder="Telefono" type="number" name="telefono" value={telefono} onChange={(e)=>{setTelefono(e.target.value)}} />
                 </label>
-                <label htmlFor="">Numero de la tarjeta
-                    <input type="number" value={numeroTarjeta} onChange={(e)=>{setNumeroTarjeta(e.target.value)}}   />
+                <label htmlFor="">
+                    <input placeholder="Numero de tarjeta" type="number" value={numeroTarjeta} onChange={(e)=>{setNumeroTarjeta(e.target.value)}}   />
                 </label>
                 <label>
-                    Nombre Completo:
-                    <input type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}  />
+                    <input placeholder="Nombre completo" type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}  />
                 </label>
                 <div>  
-                    <label htmlFor="">Fecha de vencimiento
-                        <input type="number" value={fechaVencimiento} onChange={(e)=>{setFechaVencimiento(e.target.value)}}   />
+                    <label htmlFor="">
+                        <input placeholder="Expira" type="number" value={fechaVencimiento} onChange={(e)=>{setFechaVencimiento(e.target.value)}}   />
                     </label> 
-                    <label htmlFor="">Numero de seguridad
-                        <input type="number" value={numeroSeguridad} onChange={(e)=>{setNumeroSeguridad(e.target.value)}}   />
+                    <label htmlFor="">
+                        <input placeholder="CVC" type="number" value={numeroSeguridad} onChange={(e)=>{setNumeroSeguridad(e.target.value)}}   />
                     </label> 
                 </div>
             
-                <Buttom width="100%" color={colors.second}>PAGAR</Buttom>
+                <Buttom width="100%" height="50px" color={colors.second}>PAGAR</Buttom>
             </Form>
 
         )

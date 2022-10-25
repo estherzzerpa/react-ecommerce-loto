@@ -4,7 +4,6 @@ import { colors } from "../styled-components/global/Styled-App"
 
 export const Form = styled.form`
     background-color:${colors.btnHover};
-    
     width: 50%;
     height: 100vh;
     min-height: 480px;
@@ -21,7 +20,12 @@ export const Form = styled.form`
         input{
             outline: none;
             border: none;
-            background-color: ${colors.primary};
+            background-color: ${colors.btnHover};
+            border-bottom: 2px solid ${colors.second};
+            color: ${colors.primary};
+            padding: 4px;
+            &::placeholder { color:${colors.primary}}
+
         }
     }
     div{
@@ -30,10 +34,10 @@ export const Form = styled.form`
         justify-content: space-evenly;
         align-items: center;
         text-align: center;
-
         input{
-            width: 50px;
-            margin-left: 22px;
+            width: 52px;
+            margin: auto;
+            padding: 3px;
         }
         label{
             margin: 10px;  

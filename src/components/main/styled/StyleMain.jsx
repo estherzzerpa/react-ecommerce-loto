@@ -91,8 +91,9 @@ export const ContainerDetailCard = styled.div`
     padding: 0 60px;
   
     @media(max-width:920px){
+        padding-top: 100px;
         flex-direction: column;
-        height: 100%;
+        height: 120%;
         align-items: center;
     }
 `
@@ -100,7 +101,7 @@ export const DetailCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 80%;
     min-width: 220px;
     div{
         display: flex;
@@ -109,6 +110,9 @@ export const DetailCard = styled.div`
     @media(max-width:920px){
        width: 100%;
        margin-bottom: 100px;
+    }
+    a{
+        width:100% ;
     }
 
 `
@@ -134,6 +138,8 @@ export const Container = styled.div`
     height: 120vh;
     display: flex;    
     background-color: ${colors.primary};
+    padding-bottom: 100px;
+
 
 `
 // item count

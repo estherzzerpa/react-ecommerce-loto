@@ -17,8 +17,8 @@ const Plantilla = ({prod}) => {
         <p>Precio: ${prod.price}</p>
         <p>Precio total: ${prod.cantidad * prod.price}</p>
         <div> 
-          <Buttom onClick={()=>removeItem(prod.id)} color="#bf3127fd" width={"10%"}>X</Buttom>
-          <Buttom onClick={clear} color="#5b62edda" width={"13%"}>Clear</Buttom>
+          <Buttom onClick={()=>removeItem(prod.id)} color="#bf3127fd" width={"30px"}>X</Buttom>
+          <Buttom onClick={clear} color="#5b62edda" width={"45px"}>Clear</Buttom>
         </div>
       
       </Div>

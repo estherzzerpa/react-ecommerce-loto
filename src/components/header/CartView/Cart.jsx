@@ -32,7 +32,7 @@ const Cart = () => {
                   : <DivToken>
                       <h1>Gracias por tu compra </h1>
                       <p>Token : {idCompra}</p>
-                      <Link to='/'><Buttom color={colors.second} width="100%"> Seguir comprando</Buttom></Link>
+                      <Link to='/'><Buttom color={colors.second} height="50px" width="100%"> SEGUIR COMPRANDO</Buttom></Link>
 
                     </DivToken> 
         }
@@ -66,7 +66,7 @@ const Cart = () => {
 
     <ContainerCart direction="true">
       <StyleP>El Carrito de compras esta vacio</StyleP>
-      <Link to='/'><Buttom color={colors.second} width="100%"> Ir a comprar</Buttom></Link>
+      <Link to='/'><Buttom color={colors.second} height="50px" width="100%"> Ir a comprar</Buttom></Link>
     </ContainerCart>
    
   )

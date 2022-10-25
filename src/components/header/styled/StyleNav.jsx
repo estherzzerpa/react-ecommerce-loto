@@ -162,7 +162,6 @@ export const  Div = styled.div`
   height: 100%;
 `
 
-
 // CART
 
 export const ContainerCart = styled.div`
@@ -178,6 +177,9 @@ export const ContainerCart = styled.div`
   font-size: 1.5rem;
   color: ${colors.text};
   font-weight: bold;
+  a{
+    width: 50%;
+  }
 `
 
 export const ContainerCart2 = styled.div`

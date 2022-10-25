@@ -17,7 +17,7 @@ const Item = ({product}) => {
         <Price>
            <h4>{product.category}</h4>
             <p>${product.price}</p>
-            <Link to={`/productos/${product.id}`}><Buttom width="100" >Ver detalles</Buttom></Link>
+            <Link to={`/productos/${product.id}`}><Buttom height='50px' width="100%" >Ver detalles</Buttom></Link>
         </Price>
     </CardProducts>
   )

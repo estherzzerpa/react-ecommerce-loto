@@ -21,7 +21,7 @@ const ItemCount = ({onAdd, stock, count, setCount}) => {
             <h2>{count}</h2>
             <button onClick={pluss}><img src={plus} alt="" /></button>
         </Count>
-        <Buttom color={colors.second} width="100%" onClick={onAdd}>Añadir al carrito</Buttom>
+        <Buttom color={colors.second} height="50px" width="100%" onClick={onAdd}>Añadir al carrito</Buttom>
     </>
   )
 }
