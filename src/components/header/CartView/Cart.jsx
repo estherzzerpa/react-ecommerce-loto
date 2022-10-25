@@ -46,14 +46,15 @@ const Cart = () => {
       <ContainerCart2 > 
 
         <ContainerProduct>
-        <StyleP>Total: ${ totalPrice() }</StyleP>
+        
 
           <DivScroll>
             {
               cart.map((prod)=> <Plantilla key={prod.id} prod={prod}/> )
             }
           </DivScroll>
-
+          
+          <StyleP>Total: ${ totalPrice() }</StyleP>
         </ContainerProduct>
 
         <Formulario setPay={setPay} pay={pay} idCompra={idCompra} setIdCompra={setIdCompra} setLoading={setLoading} />

@@ -12,13 +12,15 @@ const Plantilla = ({prod}) => {
     <PlantillaProduct>
       <img src={prod.image} alt="" />
       <Div>
-        <p>Producto:{prod.title} </p>
-        <p>Cantidad:{prod.cantidad}</p>
+        <p>Producto: {prod.title} </p>
+        <p>Cantidad: {prod.cantidad}</p>
         <p>Precio: ${prod.price}</p>
         <p>Precio total: ${prod.cantidad * prod.price}</p>
-        
-        <Buttom onClick={()=>removeItem(prod.id)} color="#ff675cda" width={"10%"}>X</Buttom>
-        <Buttom onClick={clear} color="#5b62edda" width={"13%"}>Clear</Buttom>
+        <div> 
+          <Buttom onClick={()=>removeItem(prod.id)} color="#bf3127fd" width={"10%"}>X</Buttom>
+          <Buttom onClick={clear} color="#5b62edda" width={"13%"}>Clear</Buttom>
+        </div>
+      
       </Div>
     </PlantillaProduct >
   )

@@ -104,7 +104,7 @@ const Formulario = ({pay, setPay, setIdCompra, setLoading}) => {
                     </label> 
                 </div>
             
-                <Buttom width="100%" color={colors.second}>Pagar</Buttom>
+                <Buttom width="100%" color={colors.second}>PAGAR</Buttom>
             </Form>
 
         )

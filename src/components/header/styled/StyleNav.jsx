@@ -133,16 +133,18 @@ export const UlMenu = styled.ul`
 // Plantilla de producto
 
 export const PlantillaProduct = styled.div`
-  width: 100%;
+  width: 80%;
   height: 120px;
-  box-shadow: 1px 1px  1px 1px  #e2c7bc76;
+  margin: auto;
+  box-shadow: 1px 1px  4px 1px  #d0a59476;
   display: flex;
   padding: 5px;
   align-items: center;
+  overflow: hidden;
   color: black;
   img{
-    width: 80px;
-    border-radius: 10%;
+    width: 90px;
+    margin: auto;
   }
   p{
     font-size: 11px;
@@ -151,12 +153,13 @@ export const PlantillaProduct = styled.div`
 `
 
 export const  Div = styled.div`
-  gap: 10px;
+  padding-top: 2px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
   margin-left: 30px;
   height: 100%;
-  background-color: antiquewhite;
 `
 
 
@@ -208,7 +211,6 @@ export const DivScroll = styled.div`
   overflow-x: hidden;
   height: 50%;
   width: 100%;
-  background-color: antiquewhite;
 
   overflow-y: scroll;
     &::-webkit-scrollbar{
