@@ -25,10 +25,9 @@ export const Form = styled.form`
             outline: none;
             border: none;
             background-color: ${colors.primary};
-            border-bottom: 2px solid ${colors.btnHover};
-            color: ${colors.btnHover};
+            border-bottom: 2px solid ${colors.text};
             padding: 4px;
-            &::placeholder { color:${colors.btnHover}}
+            &::placeholder { color:${colors.text}}
 
         }
     }
