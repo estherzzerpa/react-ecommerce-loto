@@ -2,28 +2,30 @@ import styled from "styled-components";
 import { colors } from "../../styled-components/global/Styled-App";
 
 export const Logo = styled.h2`
-    font-size: 20px;
-    font-weight: bolder;
-    color: ${colors.text};
+  font-size: 20px;
+  font-weight: bolder;
+  color: ${colors.text};
 `
 
 export const ContainerNav = styled.div`
-    display: flex;
-    position: relative;
-  
+  display: flex;
+  position: relative;
 `;
 
 export const Header = styled.header`
-    display: flex;
-    width: 100%;
-    height: ${(height)=> height};
-    background-color:${({color})=> color};
-    position: fixed;
-    align-items:center;
-    justify-content: center;
-    justify-content: space-evenly;
-    z-index: 10000;
-    transition: all .5s ease-out;
+  display: flex;
+  width: 100%;
+  height: ${(height)=> height};
+  background-color:${({color})=> color};
+  position: fixed;
+  align-items:center;
+  justify-content: center;
+  justify-content: space-evenly;
+  z-index: 10000;
+  transition: all .5s ease-out;
+  @media(max-width:920px){
+    padding-top: 10px;
+  }
 `
 
 export const UlMenu = styled.ul`
@@ -53,7 +55,6 @@ export const UlMenu = styled.ul`
             color: ${colors.second};
             }
         }
-
         @media(max-width:920px){    
             transform: translateY(100%);
             width: 100%;
@@ -92,12 +93,9 @@ export const UlMenu = styled.ul`
     }
 
     .links.menuActivo{
-        transform: translateY(37%);
-        opacity: 1;
+      transform: translateY(37%);
+      opacity: 1;
     }
-
-    
-
     /* a:nth-child(2){
         transition: .6s all;
         ul{
@@ -137,7 +135,7 @@ export const PlantillaProduct = styled.div`
   width: 80%;
   height: 120px;
   margin: auto;
-  box-shadow: 1px 1px  4px 1px  #d0a59476;
+  box-shadow: 1px 1px  4px 1px #d0a59476;
   display: flex;
   padding: 5px;
   align-items: center;
@@ -166,7 +164,6 @@ export const  Div = styled.div`
 // CART
 
 export const ContainerCart = styled.div`
-  
   background-color: ${colors.primary};
   width: 100%;
   height: 100vh;
@@ -184,7 +181,6 @@ export const ContainerCart = styled.div`
 `
 
 export const ContainerCart2 = styled.div`
-  
   background-color:${colors.primary};
   width: 100%;
   height: 100%;
