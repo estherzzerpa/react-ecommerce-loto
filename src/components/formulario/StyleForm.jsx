@@ -1,9 +1,8 @@
 import styled from "styled-components"
 import { colors } from "../styled-components/global/Styled-App"
 
-
 export const Form = styled.form`
-    background-color:${colors.btnHover};
+    background-color:${colors.primary};
     width: 50%;
     height: 100vh;
     min-height: 480px;
@@ -12,6 +11,11 @@ export const Form = styled.form`
     justify-content: space-evenly;
     padding-top: 50px;
     align-items: center;
+    box-shadow: 2px -3px 6px -1px #ad7a7692;
+    @media(max-width:838px){
+        box-shadow: 2px 2px 3px 2px #ad7a7692;
+
+    }
     label{
         font-size: 12px;
         width: 70%;
@@ -20,11 +24,11 @@ export const Form = styled.form`
         input{
             outline: none;
             border: none;
-            background-color: ${colors.btnHover};
-            border-bottom: 2px solid ${colors.second};
-            color: ${colors.primary};
+            background-color: ${colors.primary};
+            border-bottom: 2px solid ${colors.btnHover};
+            color: ${colors.btnHover};
             padding: 4px;
-            &::placeholder { color:${colors.primary}}
+            &::placeholder { color:${colors.btnHover}}
 
         }
     }
@@ -51,8 +55,8 @@ export const Form = styled.form`
 `
 
 export const MensajeError = styled.div`
-    background-color: red;
-    color: white;
+    background-color: #ec3535;
+    color: ${colors.primary};
     height: 50px;
     p{
         font-size: 60%;
