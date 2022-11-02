@@ -58,6 +58,7 @@ export const UlMenu = styled.ul`
             transform: translateY(100%);
             width: 100%;
             position: absolute;
+            opacity: 0;
             flex-direction: column;
             background-color: ${colors.primary} ;
             height: 100vh;
@@ -92,7 +93,7 @@ export const UlMenu = styled.ul`
 
     .links.menuActivo{
         transform: translateY(37%);
-        display: flex;
+        opacity: 1;
     }
 
     

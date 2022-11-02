@@ -6,6 +6,8 @@ import { colors } from "../../styled-components/global/Styled-App";
 export const WrapperMain = styled.div`
     display: flex;
     flex-wrap: wrap;
+    min-width: 420px;
+
     height: 100%;
     width: 100%;
     justify-content: center;
@@ -30,14 +32,14 @@ export const DivPortada = styled.div`
         position: absolute;
         width: 180px;
         top: 45%;
-        left: 39%;
+        left: 41%;
         right: 50%;
         z-index: 2;
         @media(max-width:662px){
             left: 37%;
         }
         @media(max-width:520px){
-            left: 35%;
+            left: 32%;
     }
     }  
 `
@@ -49,9 +51,15 @@ export const ButtonPrincipal = styled.button`
     background-color: ${colors.text};
     position:absolute;
     top: 75%;
-    left: 41%;
+    left: 43%;
     right: 50%;
     z-index: 2;
+    @media(max-width:662px){
+            left: 40%;
+        }
+        @media(max-width:520px){
+            left: 37%;
+    }
     &.btn{
         width: 6.5em;
         height: 2.3em;
@@ -107,7 +115,7 @@ export const DetailCard = styled.div`
     flex-direction: column;
     align-items: center;
     width: 80%;
-    margin-top: 10px;
+    margin-top: 10%;
     min-width: 220px;
     div{
         display: flex;
@@ -173,7 +181,6 @@ export const WrapperMainProd = styled.div`
     height: 300%;
     width: 100%;
     margin-top: 100px;
-
 `
 
 export const WrapperItem = styled.div`
@@ -182,7 +189,6 @@ export const WrapperItem = styled.div`
   justify-content: center;
   height: 100%;
   margin-bottom: 100px;
-
 `
 
 export const PProd = styled.p`
