@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { colors } from "../styled-components/global/Styled-App"
 
 const FooterBg = styled.div`
+    min-width: 420px;
     width: 100%;
     height: 300px;
     background-color: ${colors.second};

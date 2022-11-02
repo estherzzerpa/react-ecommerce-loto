@@ -7,12 +7,13 @@ export const WrapperMain = styled.div`
     display: flex;
     flex-wrap: wrap;
     min-width: 420px;
-
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
     justify-content: center;
     margin: auto;
     background-color: ${colors.primary};
+
 `;
 
 export const DivPortada = styled.div`
