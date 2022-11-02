@@ -30,9 +30,15 @@ export const DivPortada = styled.div`
         position: absolute;
         width: 180px;
         top: 45%;
-        left: 41%;
+        left: 39%;
         right: 50%;
         z-index: 2;
+        @media(max-width:662px){
+            left: 37%;
+        }
+        @media(max-width:520px){
+            left: 35%;
+    }
     }  
 `
 
@@ -43,7 +49,7 @@ export const ButtonPrincipal = styled.button`
     background-color: ${colors.text};
     position:absolute;
     top: 75%;
-    left: 43%;
+    left: 41%;
     right: 50%;
     z-index: 2;
     &.btn{
@@ -90,7 +96,7 @@ export const ContainerDetailCard = styled.div`
     align-items: center;
     padding: 0 30px;
     @media(max-width:920px){
-        padding-top: 100px;
+        padding-top: 340px;
         flex-direction: column;
         height: 120%;
         align-items: center;
@@ -101,6 +107,7 @@ export const DetailCard = styled.div`
     flex-direction: column;
     align-items: center;
     width: 80%;
+    margin-top: 10px;
     min-width: 220px;
     div{
         display: flex;
