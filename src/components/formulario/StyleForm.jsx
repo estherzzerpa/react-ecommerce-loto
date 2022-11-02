@@ -62,5 +62,12 @@ export const MensajeError = styled.div`
 
 export const DivToken = styled.div`
     text-align: center;
-    color: black;
+    padding:0 40px;
+    color:${colors.text};
+    h1{
+        font-size: 1.4rem;
+    }
+    p{
+        font-size: 1rem;
+    }
 `

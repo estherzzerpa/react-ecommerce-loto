@@ -30,7 +30,7 @@ const Cart = () => {
         {
           loading ? <ClipLoader color={"#593713"} loading={loading}  size={50} /> 
                   : <DivToken>
-                      <h1>Gracias por tu compra </h1>
+                      <h1 >Gracias por tu compra </h1>
                       <p>Token : {idCompra}</p>
                       <Link to='/'><Buttom color={colors.second} height="50px" width="100%"> SEGUIR COMPRANDO</Buttom></Link>
 

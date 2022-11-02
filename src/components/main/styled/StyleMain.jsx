@@ -150,12 +150,13 @@ export const CardImg = styled.div`
 
 export const Container = styled.div`
     width: 100%;
+    min-width: 420px;
     height: 120vh;
     align-items: center;
     justify-content: center;
     display: flex;    
     background-color: ${colors.primary};
-    padding-bottom: 100px;
+    padding-bottom: 130px;
 `
 // item count
 

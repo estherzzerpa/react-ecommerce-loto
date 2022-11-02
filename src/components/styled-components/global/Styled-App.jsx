@@ -14,7 +14,8 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        font-family:'Aboreto', 'cursive';        
+        font-family:'Aboreto', 'cursive';     
+        font-size:${({font})=> font} ;
     }
     body::-webkit-scrollbar{
         width:3px;

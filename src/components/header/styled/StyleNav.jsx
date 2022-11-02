@@ -166,12 +166,13 @@ export const  Div = styled.div`
 export const ContainerCart = styled.div`
   background-color: ${colors.primary};
   width: 100%;
+  min-width: 420px;
   height: 100vh;
   display: flex;
   justify-content: center;
+  text-align: center;
   flex-direction: ${(direction)=> direction && "column"} ;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: center;  
   font-size: 1.5rem;
   color: ${colors.text};
   font-weight: bold;
@@ -184,6 +185,7 @@ export const ContainerCart2 = styled.div`
   background-color:${colors.primary};
   width: 100%;
   height: 100%;
+  min-width: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
