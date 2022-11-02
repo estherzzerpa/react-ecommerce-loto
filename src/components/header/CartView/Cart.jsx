@@ -20,7 +20,7 @@ const Cart = () => {
   const [idCompra, setIdCompra] = useState("")
   const [loading, setLoading] = useState(true)
 
-  const {cart, totalPrice} = useCartContext(Context)
+  const {cart, totalPrice, clear} = useCartContext(Context)
 
   if(pay){
 
@@ -55,6 +55,8 @@ const Cart = () => {
           </DivScroll>
           
           <StyleP>Total: ${ totalPrice() }</StyleP>
+          <Buttom onClick={clear} color="#5b62edda" height="50px" width={"300px"}>Clear</Buttom>
+
         </ContainerProduct>
 
         <Formulario setPay={setPay} pay={pay} idCompra={idCompra} setIdCompra={setIdCompra} setLoading={setLoading} />

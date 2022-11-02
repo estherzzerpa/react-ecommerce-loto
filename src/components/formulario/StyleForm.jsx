@@ -50,6 +50,16 @@ export const Form = styled.form`
 
 `
 
+export const MensajeError = styled.div`
+    background-color: red;
+    color: white;
+    height: 50px;
+    p{
+        font-size: 60%;
+    }
+
+`
+
 export const DivToken = styled.div`
     text-align: center;
     color: black;

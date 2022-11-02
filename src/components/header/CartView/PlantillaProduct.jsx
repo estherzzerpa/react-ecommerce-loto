@@ -5,7 +5,7 @@ import { Div } from '../styled/StyleNav'
 import { PlantillaProduct } from '../styled/StyleNav'
 
 const Plantilla = ({prod}) => {
-  const { removeItem, clear} = useCartContext(Context)
+  const { removeItem} = useCartContext(Context)
 
   return (
 
@@ -15,10 +15,9 @@ const Plantilla = ({prod}) => {
         <p>Producto: {prod.title} </p>
         <p>Cantidad: {prod.cantidad}</p>
         <p>Precio: ${prod.price}</p>
-        <p>Precio total: ${prod.cantidad * prod.price}</p>
+        <p>Precio total: ${ Math.round(prod.cantidad * prod.price)}</p>
         <div> 
           <Buttom onClick={()=>removeItem(prod.id)} color="#bf3127fd" width={"30px"}>X</Buttom>
-          <Buttom onClick={clear} color="#5b62edda" width={"45px"}>Clear</Buttom>
         </div>
       
       </Div>

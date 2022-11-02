@@ -6,7 +6,7 @@ import { Context } from "../Context/CustomContext"
 import {db} from '../../firebase/firestore'
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import {  doc, updateDoc} from "firebase/firestore"
-import { Form} from "./StyleForm"
+import { Form, MensajeError} from "./StyleForm"
 
 
 
@@ -38,7 +38,10 @@ const Formulario = ({pay, setPay, setIdCompra, setLoading}) => {
 
         if([name, email, telefono,numeroTarjeta,numeroSeguridad,fechaVencimiento].includes("") ){
 
-            setValidacion(true)       
+            setValidacion(true)
+            setTimeout(() => {
+                setValidacion(false)
+            }, 2000);       
 
         }else{
    
@@ -80,9 +83,9 @@ const Formulario = ({pay, setPay, setIdCompra, setLoading}) => {
 
             <Form onSubmit={finalizarCompra}>
                 {validacion && (
-                    <div>
+                    <MensajeError>
                          <p>Todos los campos son obligatorios</p>
-                    </div>
+                    </MensajeError>
                 )}
                 <label>
                     <input placeholder="Email" type="email" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />

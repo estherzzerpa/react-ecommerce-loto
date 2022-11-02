@@ -88,8 +88,7 @@ export const ContainerDetailCard = styled.div`
     width: 100%;
     overflow-y: hidden;
     align-items: center;
-    padding: 0 60px;
-  
+    padding: 0 30px;
     @media(max-width:920px){
         padding-top: 100px;
         flex-direction: column;
@@ -136,11 +135,11 @@ export const CardImg = styled.div`
 export const Container = styled.div`
     width: 100%;
     height: 120vh;
+    align-items: center;
+    justify-content: center;
     display: flex;    
     background-color: ${colors.primary};
     padding-bottom: 100px;
-
-
 `
 // item count
 
@@ -181,6 +180,7 @@ export const WrapperItem = styled.div`
 
 export const PProd = styled.p`
   font-size: 30px;
+  padding-top: 100px;
   font-weight: bold;
   color: ${colors.text};
   margin-top: 50px;

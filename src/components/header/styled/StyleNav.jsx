@@ -17,7 +17,7 @@ export const Header = styled.header`
     display: flex;
     width: 100%;
     height: ${(height)=> height};
-    background-color:${({color})=>color};
+    background-color:${({color})=> color};
     position: fixed;
     align-items:center;
     justify-content: center;
@@ -50,7 +50,7 @@ export const UlMenu = styled.ul`
             color: ${colors.text};
             display: block;
             &:hover{
-            color: ${colors.btnHover};
+            color: ${colors.second};
             }
         }
 

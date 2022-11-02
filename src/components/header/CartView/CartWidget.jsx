@@ -18,7 +18,6 @@ const CartWidget = () => {
   return (
     
     <CartDiv>  
-
         <img src={bag} alt="bag shop" width={35} height={35} />
         <p>{totalProducts()|| ""}</p>
     </CartDiv>

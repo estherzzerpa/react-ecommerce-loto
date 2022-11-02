@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom'
 import { useRef } from 'react'
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from '../../firebase/firestore'
-import Footer from '../footer/Footer'
 import { PProd } from '../../components/main/styled/StyleMain'
 
 const ItemListContainer = () => {
@@ -19,7 +18,7 @@ const [listProduct, setListProduct] = useState([])
 useEffect(()=>{
 
 const collectionProducts = collection(db, "productos")
-const resultado =  IdCategoria ? query(collectionProducts, where("category","==", IdCategoria))  : collectionProducts
+const resultado =  IdCategoria ? query(collectionProducts, where("category","==", IdCategoria))  : collectionProducts;
 
 getDocs(resultado)
 .then((data)=>{
@@ -33,18 +32,18 @@ getDocs(resultado)
 })
 .catch(() => {
   setError(true)
-  console.log(error)
 })
   .finally(()=>{
     setLoading(false)
   });
-  },[IdCategoria])
+  },[IdCategoria, error])
 
   const scrollBehavior = useRef(null)
   return (
   <WrapperMain>
-    <Portada scrollBehavior={scrollBehavior} url={IdCategoria} ></Portada>
-    <ItemList  scrollBehavior={scrollBehavior}  listProduct= {listProduct} loading={loading}></ItemList>
+    <Portada scrollBehavior={scrollBehavior} url={IdCategoria}></Portada>
+    <PProd ref={scrollBehavior}>Productos</PProd>
+    <ItemList  listProduct= {listProduct} loading={loading}></ItemList>
   </WrapperMain>
 )}
 

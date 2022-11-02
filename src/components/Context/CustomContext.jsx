@@ -28,31 +28,33 @@ const CartContext = ({children}) => {
 
     const removeItem = (id) =>{
 
-    //  const cartFiltrado =  cart.filter((item)=>{
-    //       return  item.id !== id
-    //     });
-    //     setCart(cartFiltrado)
-
-
     if(isInCart){
-        let newCart;
-        const clickId = cart.find((item)=>{
-        return item.id === id})
-        if(clickId.cantidad === 1){
+        // const clickId = cart.find((item)=>{
+        //   return item.id === id
+        // })
 
-            newCart = [...cart.filter((item)=>{
-                return item.id !== id
-            })]
+       let newCart = [...cart.filter((item)=>{
+            return item.id === id ? item.cantidad = item.cantidad - 1 : item.id !== id;
+        })]
+        setCart(newCart);
 
-            setCart(newCart)
+        // todo el codigo que hice al pedo antes :
 
-        }
-        else{
+        // if(clickId.cantidad === 1){
+
+        //     newCart = [...cart.filter((item)=>{
+        //         return item.id !== id;
+        //     })]
             
-            setCart(cart.filter((item)=>{ return item.cantidad = item.cantidad  - 1 }))
+        //     console.log(newCart);
+        // }
+        // else{ 
 
-        }
-
+        //     setCart(cart.filter((item)=> {
+        //          console.log(item.cantidad)
+        //         return item.cantidad = item.cantidad  - 1 }))
+        // }
+      
     }
 
     }
@@ -66,12 +68,12 @@ const CartContext = ({children}) => {
     } 
     // precio total de todos los productos en el cart 
     const totalPrice =  ()=>{
-       return cart.reduce((acum, act ) => acum + act.cantidad * act.price, 0 )
+       return cart.reduce((acum, act) => Math.round(acum + act.cantidad * act.price), 0 )
     }
 
     // cantidad total de prodcutos
 
-    const totalProducts = ()=> cart.reduce((acum, productoActual) => acum + productoActual.cantidad, 0);
+    const totalProducts = ()=> cart.reduce((acum, productoActual) =>  acum + productoActual.cantidad, 0);
 
 
   return (
