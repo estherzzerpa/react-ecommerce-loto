@@ -13,7 +13,7 @@ export const Form = styled.form`
     align-items: center;
     box-shadow: 2px -3px 6px -1px #ad7a7692;
     @media(max-width:838px){
-        box-shadow: 2px 2px 3px 2px #ad7a7692;
+        box-shadow: 2px 2px 12px -3px #ad7a7692;
 
     }
     label{
